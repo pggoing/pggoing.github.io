@@ -332,6 +332,75 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-node js+hexo+github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+      <time datetime="2021-11-30T17:28:26.056Z" itemprop="datePublished">2021-12-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">利用node js+hexo+github搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>  大家好，我是pgg，目前是一名某不知名二本大学软件工程专业的大一菜鸟，菜鸟可能还算不上，应该说是小白，但是这不妨碍我有一颗积极向上的心。作为it人，我认为搭建个人博客是非常有必要的一件事，这无论是对于自己的学习、理清我们的学习思路、甚至是以后步入社会的求职，都是有很大的帮助。如果说商人喜欢发名片介绍自己，那么我认为作为一名it人，个人博客或者个人网站就是最好的名片。
+  好的，下面步入正题，如何利用node js hexo框架 github搭建个人博客？
+</code></pre>
+<p>1.下载node js工具   <a target="_blank" rel="noopener" href="https://nodejs.org/download/">https://nodejs.org/download/</a><br>根据自己Windows的版本下载合适的node js版本，不同的windows版本可能和node的兼容情况也不一样，下载安装，node的占用较小，可以安装在电脑的c盘。安装好一直后可以在电脑的控制台（win+r–cmd–node -v）查看node的版本，出现版本号表示安装完成。</p>
+<p>2.更换国内镜像<br>因为借助npm包管理器来安装时，国内安装镜像源很慢，所以需借助国内的服务器安装<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
+<p>3.安装hexo<br>cnpm install -g hexo-cli<br>在控制台输入npm -v查看npm版本。输入npm install -g hexo-cli安装hexo，安装完成后使用hexo -v命令查看hexo版本号，出现版本号即为安装完成。</p>
+<p>至此，搭建个人博客的本地武器库可以说基本齐全了，接下来就是在本地创建文件夹，作为博客搭建的“根据地”。</p>
+<p>4.在c盘中user中创建一个文件夹，我喜欢将他命名为blog，也可以用命令mkdir blog创建文件夹。</p>
+<p>5.初始化hexo<br>用cd blog命令进入blog文件夹，在控制台敲出hexo init，待进程跑完，你点开blog文件夹，你会神奇的发现，blog文件夹中克隆出了许多文件，甚至还会默认克隆出一个主题。</p>
+<p>接下来可以敲一个dir，控制台会详细列出根目录下的所有文件。苹果电脑的mac系统我没用过，应该是敲pwd命令，但是好像苹果电脑的控制台要root啥的，不太清楚嘿嘿，听说叫啥开发者模式来着，反正大同小异。</p>
+<p>6.启动hexo<br>在控制台敲hexo s，控制台上会显示hexo is running at <a href="http://localhosts:4000，意思是hexo已经在本地的4000端口运行了。接下来我们打开电脑的浏览器输入localhosts:4000，我们就可以进入，首先在众多英文中hexo四个大字母居中于网页中间，很显眼有没有！没错，到这一步，我们已经成功了一半。可以在本地看到的我们个人博客的雏形。">http://localhosts:4000，意思是hexo已经在本地的4000端口运行了。接下来我们打开电脑的浏览器输入localhosts:4000，我们就可以进入，首先在众多英文中hexo四个大字母居中于网页中间，很显眼有没有！没错，到这一步，我们已经成功了一半。可以在本地看到的我们个人博客的雏形。</a></p>
+<pre><code>  好了，以上就是个人博客本地搭建到本地预览的全部步骤，有一定计算机基础的uu们以上步骤操作应该不会碰到太多的问题，但是特别要注意在控制台敲命令的时候一个空格的偏差可能会导致某个步骤的失败。下一篇我来说说个人博客部署到远端的操作步骤，说实话第一次操作会碰到一些麻烦，我会把我踩过的坑写在下一篇博客中，帮助大家尽快搭建属于自己的个人博客。
+  现在是2021年12月1日凌晨1：30，一个月的开始，恰逢这个月的开头，我也写出了第一篇个人计算机技术类教程，此时我没有一丝困意，第一次手敲技术教程还挺激动的。我相信这次我it生涯中的小小开端，能激励我一直保持对计算机的热情！
+ 
+</code></pre>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-经典语录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
