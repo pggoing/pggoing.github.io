@@ -332,6 +332,140 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-程序设计与C语言" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/10/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80/" class="article-date">
+      <time datetime="2022-01-10T10:06:24.565Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <br/>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**计算机和编程语言**</span><br></pre></td></tr></table></figure>
+
+<p> “计算机啥也不会”</p>
+<p> 计算机只会根据指令，你叫它做什么它就做什么</p>
+<p> 人： what to do?</p>
+<p> 计算机：How to do?</p>
+<p> 编程语言的作用：“写下步骤让计算机去执行”</p>
+<p> 编程语言不是人和计算机交谈的语言（交谈比如doulbe click）</p>
+<p>计算机只能懂2进制的东西，蓝色是程序员能懂的，黄色是普通人能懂的</p>
+<p><img src="484531e4ac631d414228869ddf99db42.png" alt="uTools_1641003947971.png"></p>
+<p><strong>什么是算法？</strong></p>
+<p>■我们要让计算机做计算，就需要像这样找出计算的额步骤，然后用编程语言写出来</p>
+<p>■计算机做的所有的事情都叫做计算</p>
+<p>■计算的步骤就是算法</p>
+<p><strong>问题</strong> “怎么解2*x+6=20”？</p>
+<p>思路 for x++    一个一个试   步骤多，繁杂</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二分法：5-10  7？8？   可能两步，相对简单</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>■计算机程序的执行有两种方案</p>
+<p>1.解释：借助一个程序，那个程序能试图理解你的程序，然后按照你的要求执行（有一个程序读懂你写的程序）</p>
+<p>2.编译：借助一个程序，就像一个翻译，把你的程序翻译成计算机真正能懂的语言———机器语言——写的程序，然后，这个机器语言写的程序就能直接执行了（你写的程序——翻译成计算机能懂的程序——计算机）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;语言既可以解释运行，也能编译运行&lt;/u&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>                                                                        为什么是C**
+</code></pre>
+<br/>
+
+<p>1、使用广泛</p>
+<p>2、排名和所占份额稳定</p>
+<p>3、很多场景c是唯一的选择（操作系统、嵌入式）</p>
+<p>4、后来的语言语法都和c很接近，“c like”的语言</p>
+<p>5、好用的语言，都有类似c的函数库，面向对象语言的类库…方便解决问题</p>
+<br/>
+
+<p><u>c语言的发展历史</u></p>
+<p>1、c语言是从B语言发展而来的，B语言是从bcpl发展而来的，bcpl是从FORTRAN发展而来的</p>
+<p>2、BCPL和B都支持指针间接方式，所以c也支持了</p>
+<p>3、1973年11月 ，第三版的Unix上出现了c语言的编译器</p>
+<p>4、1973年11月，第四版的Unix（System Four）发布了，这个版本是完全用c语言重新写的</p>
+<p>5、1989年ANSI发布了一个标准——ANSI C</p>
+<p>6、1990年ISO接受了ANSI的标准——C89</p>
+<p>7、C的标准在1995年和1999年两次更新——C95和C99（目前最新的c语言标准是2018年发布的c18）</p>
+<br/>
+
+<p>c语言的使用场景</p>
+<p>操作系统                                       开发效率&gt;&gt;学习过程</p>
+<p>嵌入式系统                                    开发效率&gt;&gt;开发乐趣</p>
+<p>驱动程序                                       日常应用很少直接用c语言编写</p>
+<p>底层驱动                                       学习c的过程主要是写练习代码</p>
+<p>图形引擎、图像处理、声音效果      而非真是的软件</p>
+<br/>
+
+<p>编译→运行</p>
+<p> c需要被编译才能运行，因此你需要：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">■编辑器</span><br><span class="line"></span><br><span class="line">■编译器</span><br><span class="line"></span><br><span class="line">■或者 IDE(集成开发环境）</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>推荐的编程软件                                    其他选择</p>
+<p>■Dev C++  （windows）                     ■visual studio express(windows)</p>
+<p>■免费                                                    ■xcode(xcode)</p>
+<p>■安装简单                                             ■Eclipse-CDT</p>
+<p>■不用建工程                                          ……</p>
+<br/>
+
+<p>易错概念：■c语言不能写图形界面的软件；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">■轻量级编程软件，如Geany+MInGw或Sublime Text+MinGw，与专门的IDE如Dev C++相比，单步调试功能没有了，但是源代码编辑时的语法高亮、编译程序、运行程序功能都有。</span><br><span class="line"></span><br><span class="line">■IDE的中文翻译时“集成开发环境”</span><br><span class="line"></span><br><span class="line">■小黑框 命令行 ”终端“（显示程序运行结果的窗口）</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**第一个程序**</span><br></pre></td></tr></table></figure>
+
+<p><strong><u>程序框架</u></strong></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p> int main( )</p>
+<p>{</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return 0;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p><strong><u>输出</u></strong></p>
+<p>■pirntf(“Hello World!\n”);</p>
+<p>■” “里面的内容叫做“字符串”，printf会把其中的内容原封不动地输出</p>
+<p>■\n表示需要在输出的结果后面换一行（跨行符）</p>
+<br/>
+
+<p><strong>不要用中文！ 写程序不要用全角符号</strong>  </p>
+<p>双引号内写中文是可以的</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-node js+hexo+github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -607,7 +741,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2021 John Doe
+                &copy; 2022 John Doe
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
