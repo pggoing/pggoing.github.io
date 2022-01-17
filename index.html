@@ -1,818 +1,329 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+
 <head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#202020"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
   
   
-    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+    <meta name="keywords" content="" />
   
-  
-      
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
 
   
+    <meta name="description" content="pgg的博客," />
   
-<link rel="stylesheet" href="/css/style.css">
-
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
+  <link rel="icon" type="image/x-icon" href="/logo.png">
+  <title> [ pgg的博客 ]</title>
+  
+    <!-- stylesheets list from config.yml -->
     
+      <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+    
+      <link rel="stylesheet" href="/css/xoxo.css">
     
   
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
+
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="img/head.jpg" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/"></a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  target="_blank" rel="noopener" href="http://pggoing.github.io/">博客首页</a></li>
-                        
-                            <li><a  href="/archives">文章归档</a></li>
-                        
-                            <li><a  href="/CTFStudy">学习导航</a></li>
-                        
-                            <li><a  href="/PWNABLE">PWNABLE</a></li>
-                        
-                            <li><a  href="/resume">个人简历</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                            
-                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                            
-                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
-</div>
+  <div class="nav-container">
+    <nav class="home-menu pure-menu pure-menu-horizontal">
+  <a class="pure-menu-heading" href="/">
+    <img class="avatar" src="http://example.com/images/logo.png">
+    <span class="title">pgg的博客</span>
+  </a>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me"></a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a target="_blank" rel="noopener" href="http://pggoing.github.io/">博客首页</a></li>
-                
-                    <li><a href="/archives">文章归档</a></li>
-                
-                    <li><a href="/CTFStudy">学习导航</a></li>
-                
-                    <li><a href="/PWNABLE">PWNABLE</a></li>
-                
-                    <li><a href="/resume">个人简历</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>                
-    </div>
+  <ul class="pure-menu-list clearfix">
+      
+          
+            <li class="pure-menu-item actived"><a href="/" class="pure-menu-link">Home</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/archives" class="pure-menu-link">Archives</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/tags" class="pure-menu-link">Tags</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/search" class="pure-menu-link">Search</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a target="_blank" rel="noopener" href="https://0xff000000.com" class="pure-menu-link">About</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/atom.xml" class="pure-menu-link">RSS</a></li>
+          
+      
+  </ul>
+   
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-程序设计与C语言" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/01/10/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80/" class="article-date">
-      <time datetime="2022-01-10T10:06:24.565Z" itemprop="datePublished">2022-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/10/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80/">程序设计与C语言</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <pre><code>                                    **计算机和编程语言**
-</code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> “计算机啥也不会”</span><br><span class="line"></span><br><span class="line"> 计算机只会根据指令，你叫它做什么它就做什么</span><br><span class="line"></span><br><span class="line"> 人： what to do?</span><br><span class="line"></span><br><span class="line"> 计算机：How to do?</span><br><span class="line"></span><br><span class="line"> 编程语言的作用：“写下步骤让计算机去执行”</span><br><span class="line"></span><br><span class="line"> 编程语言不是人和计算机交谈的语言（交谈比如doulbe click）</span><br><span class="line"></span><br><span class="line">计算机只能懂2进制的东西，蓝色是程序员能懂的，黄色是普通人能懂的</span><br><span class="line"></span><br><span class="line">![uTools_1641003947971.png](484531e4ac631d414228869ddf99db42.png)</span><br><span class="line"></span><br><span class="line">**什么是算法？**</span><br><span class="line"></span><br><span class="line">■我们要让计算机做计算，就需要像这样找出计算的额步骤，然后用编程语言写出来</span><br><span class="line"></span><br><span class="line">■计算机做的所有的事情都叫做计算</span><br><span class="line"></span><br><span class="line">■计算的步骤就是算法</span><br><span class="line"></span><br><span class="line">**问题** “怎么解2*x+6=20”？</span><br><span class="line"></span><br><span class="line">思路 for x++    一个一个试   步骤多，繁杂</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>   二分法：5-10  7？8？   可能两步，相对简单</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">■计算机程序的执行有两种方案</span><br><span class="line"></span><br><span class="line">1.解释：借助一个程序，那个程序能试图理解你的程序，然后按照你的要求执行（有一个程序读懂你写的程序）</span><br><span class="line"></span><br><span class="line">2.编译：借助一个程序，就像一个翻译，把你的程序翻译成计算机真正能懂的语言———机器语言——写的程序，然后，这个机器语言写的程序就能直接执行了（你写的程序——翻译成计算机能懂的程序——计算机）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><u>语言既可以解释运行，也能编译运行</u></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">                                                                            为什么是C**</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">1、使用广泛</span><br><span class="line"></span><br><span class="line">2、排名和所占份额稳定</span><br><span class="line"></span><br><span class="line">3、很多场景c是唯一的选择（操作系统、嵌入式）</span><br><span class="line"></span><br><span class="line">4、后来的语言语法都和c很接近，“c like”的语言</span><br><span class="line"></span><br><span class="line">5、好用的语言，都有类似c的函数库，面向对象语言的类库...方便解决问题</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">&lt;u&gt;c语言的发展历史&lt;/u&gt;</span><br><span class="line"></span><br><span class="line">1、c语言是从B语言发展而来的，B语言是从bcpl发展而来的，bcpl是从FORTRAN发展而来的</span><br><span class="line"></span><br><span class="line">2、BCPL和B都支持指针间接方式，所以c也支持了</span><br><span class="line"></span><br><span class="line">3、1973年11月 ，第三版的Unix上出现了c语言的编译器</span><br><span class="line"></span><br><span class="line">4、1973年11月，第四版的Unix（System Four）发布了，这个版本是完全用c语言重新写的</span><br><span class="line"></span><br><span class="line">5、1989年ANSI发布了一个标准——ANSI C</span><br><span class="line"></span><br><span class="line">6、1990年ISO接受了ANSI的标准——C89</span><br><span class="line"></span><br><span class="line">7、C的标准在1995年和1999年两次更新——C95和C99（目前最新的c语言标准是2018年发布的c18）</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">c语言的使用场景</span><br><span class="line"></span><br><span class="line">操作系统                                       开发效率&gt;&gt;学习过程</span><br><span class="line"></span><br><span class="line">嵌入式系统                                    开发效率&gt;&gt;开发乐趣</span><br><span class="line"></span><br><span class="line">驱动程序                                       日常应用很少直接用c语言编写</span><br><span class="line"></span><br><span class="line">底层驱动                                       学习c的过程主要是写练习代码</span><br><span class="line"></span><br><span class="line">图形引擎、图像处理、声音效果      而非真是的软件</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">编译→运行</span><br><span class="line"></span><br><span class="line"> c需要被编译才能运行，因此你需要：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>■编辑器</p>
-<p>■编译器</p>
-<p>■或者 IDE(集成开发环境）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">推荐的编程软件                                    其他选择</span><br><span class="line"></span><br><span class="line">■Dev C++  （windows）                     ■visual studio express(windows)</span><br><span class="line"></span><br><span class="line">■免费                                                    ■xcode(xcode)</span><br><span class="line"></span><br><span class="line">■安装简单                                             ■Eclipse-CDT</span><br><span class="line"></span><br><span class="line">■不用建工程                                          ……</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br><span class="line">易错概念：■c语言不能写图形界面的软件；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<pre><code>     ■轻量级编程软件，如Geany+MInGw或Sublime Text+MinGw，与专门的IDE如Dev C++相比，单步调试功能没有了，但是源代码编辑时的语法高亮、编译程序、运行程序功能都有。
-
-     ■IDE的中文翻译时“集成开发环境”
-
-     ■小黑框 命令行 ”终端“（显示程序运行结果的窗口）
-     
-     
-</code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;br/&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<pre><code>                                           **第一个程序**
-</code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**&lt;u&gt;程序框架&lt;/u&gt;**</span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"> int main( )</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>return 0;</p>
-<pre><code>
-&#125;
-
-**&lt;u&gt;输出&lt;/u&gt;**
-
-■pirntf(&quot;Hello World!\n&quot;);
-
-■&quot; &quot;里面的内容叫做“字符串”，printf会把其中的内容原封不动地输出
-
-■\n表示需要在输出的结果后面换一行（跨行符）
-
-&lt;br/&gt;
-
-**不要用中文！ 写程序不要用全角符号**  
-
-双引号内写中文是可以的
-</code></pre>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
-</article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-node js+hexo+github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-      <time datetime="2021-11-30T17:28:26.056Z" itemprop="datePublished">2021-12-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">利用node js+hexo+github搭建个人博客</a>
-    </h1>
-  
-
-      </header>
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
       
+
+  <div class="recent-posts">
     
-    <div class="article-entry" itemprop="articleBody">
-      
+
+      <article class="recent-post-item">
+        <a class="title" href="/2022/01/10/程序设计与C语言/"><h2>程序设计与C语言</h2></a>
+        <div class="post-meta">
           
-        <pre><code>  大家好，我是pgg，目前是一名某不知名二本大学软件工程专业的大一菜鸟，菜鸟可能还算不上，应该说是小白，但是这不妨碍我有一颗积极向上的心。作为it人，我认为搭建个人博客是非常有必要的一件事，这无论是对于自己的学习、理清我们的学习思路、甚至是以后步入社会的求职，都是有很大的帮助。如果说商人喜欢发名片介绍自己，那么我认为作为一名it人，个人博客或者个人网站就是最好的名片。
-  好的，下面步入正题，如何利用node js hexo框架 github搭建个人博客？
-</code></pre>
-<p>1.下载node js工具   <a target="_blank" rel="noopener" href="https://nodejs.org/download/">https://nodejs.org/download/</a><br>根据自己Windows的版本下载合适的node js版本，不同的windows版本可能和node的兼容情况也不一样，下载安装，node的占用较小，可以安装在电脑的c盘。安装好一直后可以在电脑的控制台（win+r–cmd–node -v）查看node的版本，出现版本号表示安装完成。</p>
-<p>2.更换国内镜像<br>因为借助npm包管理器来安装时，国内安装镜像源很慢，所以需借助国内的服务器安装<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
-<p>3.安装hexo<br>cnpm install -g hexo-cli<br>在控制台输入npm -v查看npm版本。输入npm install -g hexo-cli安装hexo，安装完成后使用hexo -v命令查看hexo版本号，出现版本号即为安装完成。</p>
-<p>至此，搭建个人博客的本地武器库可以说基本齐全了，接下来就是在本地创建文件夹，作为博客搭建的“根据地”。</p>
-<p>4.在c盘中user中创建一个文件夹，我喜欢将他命名为blog，也可以用命令mkdir blog创建文件夹。</p>
-<p>5.初始化hexo<br>用cd blog命令进入blog文件夹，在控制台敲出hexo init，待进程跑完，你点开blog文件夹，你会神奇的发现，blog文件夹中克隆出了许多文件，甚至还会默认克隆出一个主题。</p>
-<p>接下来可以敲一个dir，控制台会详细列出根目录下的所有文件。苹果电脑的mac系统我没用过，应该是敲pwd命令，但是好像苹果电脑的控制台要root啥的，不太清楚嘿嘿，听说叫啥开发者模式来着，反正大同小异。</p>
-<p>6.启动hexo<br>在控制台敲hexo s，控制台上会显示hexo is running at <a href="http://localhosts:4000，意思是hexo已经在本地的4000端口运行了。接下来我们打开电脑的浏览器输入localhosts:4000，我们就可以进入，首先在众多英文中hexo四个大字母居中于网页中间，很显眼有没有！没错，到这一步，我们已经成功了一半。可以在本地看到的我们个人博客的雏形。">http://localhosts:4000，意思是hexo已经在本地的4000端口运行了。接下来我们打开电脑的浏览器输入localhosts:4000，我们就可以进入，首先在众多英文中hexo四个大字母居中于网页中间，很显眼有没有！没错，到这一步，我们已经成功了一半。可以在本地看到的我们个人博客的雏形。</a></p>
-<pre><code>  好了，以上就是个人博客本地搭建到本地预览的全部步骤，有一定计算机基础的uu们以上步骤操作应该不会碰到太多的问题，但是特别要注意在控制台敲命令的时候一个空格的偏差可能会导致某个步骤的失败。下一篇我来说说个人博客部署到远端的操作步骤，说实话第一次操作会碰到一些麻烦，我会把我踩过的坑写在下一篇博客中，帮助大家尽快搭建属于自己的个人博客。
-  现在是2021年12月1日凌晨1：30，一个月的开始，恰逢这个月的开头，我也写出了第一篇个人计算机技术类教程，此时我没有一丝困意，第一次手敲技术教程还挺激动的。我相信这次我it生涯中的小小开端，能激励我一直保持对计算机的热情！
- 
-</code></pre>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-经典语录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/11/26/%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%BD%95/" class="article-date">
-      <time datetime="2021-11-25T16:37:26.317Z" itemprop="datePublished">2021-11-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/26/%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%BD%95/">程序员经典语录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+          <time class="time" datetime="2022-01-10T10:06:24.565Z">
+            2022-01-10
+          </time>
           
-        <pre><code> 一个好的程序员是那种过单行线马路都要往两边看的人。(Doug Linder)
- 程序有问题时不要担心。如果所有东西都没问题，你就失业了。(软件工程的Mosher定律)
- 程序员的麻烦在于，你无法弄清他在捣腾什么，当你最终弄明白时，也许已经晚了。(超级计算机之父Seymour Cray)
- 我想大部分人都知道通常一个程序员会具有的美德。当然了，有三种：懒惰，暴躁，傲慢。(Perl语言发明者Larry Wall)
- 编程时要保持这种心态：就好象将来要维护你这些代码的人是一位残暴的精神病患者，而且他知道你住在哪。(Martin Golding)
-  一个人写的烂软件将会给另一个人带来一份全职工作。(Jessica Gaston)
-  如果建筑工人像程序员写软件那样盖房子，那第一只飞来的啄木鸟就能毁掉人类文明。(Gerald Weinberg)
-  这世界最有可能毁灭的方式——大多数专家都同意——是次意外。这就是为什么会有我们，我们是计算机专家，我们创造意外。(Nathaniel Borenstein)
-  我们这个行业有个特别奇怪的现象：不仅我们不从失败里吸取教训，同时也不从成功中学习经验。 (Keith Braithwaite)
-  一种新技术一旦开始流行，你要么坐上压路机，要么成为铺路石。(Stewart Brand)
-</code></pre>
-<p>如果没能一次成功，那就叫它 1.0 版吧。(unknown)<br>      所有的程序员都是编剧，所有的计算机都是烂演员。(Anonymous Hack Actor)<br>      工作进度上越早落后，你就会有越充足的时间赶上。(Anonymous Scheduler)<br>      当有这样的一种编程语言出现：它能让程序员用简单的英语编程，你将会发现，程序员都开始不会说英语。(Anonymous Linguist)<br>      为什么我们没有时间把事情做对，却总有时间把事情做过头？(Anonymous)<br>      傻瓜都能写出计算机能理解的程序。优秀的程序员写出的是人类能读懂的代码。<br>      任何你写的代码，超过 6 个月不去看它，当你再看时，都像是别人写的。(Eagleson’s law)</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-pgg的第一篇博客文章" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/11/16/pgg%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="article-date">
-      <time datetime="2021-11-16T14:02:09.519Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/16/pgg%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">pgg的个人博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+          <span class="slash">/</span>
           
-        <p>大家好我是pgg，今天是我搭建的个人博客的第一天！</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/11/16/hello-world/" class="article-date">
-      <time datetime="2021-11-16T12:04:48.747Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
           
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2022 John Doe
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
-            </div>
         </div>
+
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
+        <a class="more" href="/2022/01/10/程序设计与C语言/"> 阅读全文〉</a>
+      </article>
+    
+
+      <article class="recent-post-item">
+        <a class="title" href="/2021/12/01/node js+hexo+github搭建个人博客/"><h2>利用node js+hexo+github搭建个人博客</h2></a>
+        <div class="post-meta">
+          
+          <time class="time" datetime="2021-11-30T17:28:26.056Z">
+            2021-12-01
+          </time>
+          
+          <span class="slash">/</span>
+          
+          
+          
+
+        </div>
+
         
+        <a class="more" href="/2021/12/01/node js+hexo+github搭建个人博客/"> 阅读全文〉</a>
+      </article>
+    
+
+      <article class="recent-post-item">
+        <a class="title" href="/2021/11/26/经典语录/"><h2>程序员经典语录</h2></a>
+        <div class="post-meta">
+          
+          <time class="time" datetime="2021-11-25T16:37:26.317Z">
+            2021-11-26
+          </time>
+          
+          <span class="slash">/</span>
+          
+          
+          
+
+        </div>
+
+        
+        <a class="more" href="/2021/11/26/经典语录/"> 阅读全文〉</a>
+      </article>
+    
+
+      <article class="recent-post-item">
+        <a class="title" href="/2021/11/16/pgg的第一篇博客文章/"><h2>pgg的个人博客</h2></a>
+        <div class="post-meta">
+          
+          <time class="time" datetime="2021-11-16T14:02:09.519Z">
+            2021-11-16
+          </time>
+          
+          <span class="slash">/</span>
+          
+          
+          
+
+        </div>
+
+        
+        <a class="more" href="/2021/11/16/pgg的第一篇博客文章/"> 阅读全文〉</a>
+      </article>
+    
+
+      <article class="recent-post-item">
+        <a class="title" href="/2021/11/16/hello-world/"><h2>Hello World</h2></a>
+        <div class="post-meta">
+          
+          <time class="time" datetime="2021-11-16T12:04:48.747Z">
+            2021-11-16
+          </time>
+          
+          <span class="slash">/</span>
+          
+          
+          
+
+        </div>
+
+        
+        <a class="more" href="/2021/11/16/hello-world/"> 阅读全文〉</a>
+      </article>
+    
+  </div>
+
+
+
+    </div>
+
+    
+
+  </div>
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+        <a class="bottom-item" target="_blank" rel="noopener" href="https://blog.0xff000000.com">首页</a> |
+        <a class="bottom-item" href="https://0xff000000.com" target="_blank">主站</a> |
+        <a class="bottom-item" href="https://github.com/pggoing" target="_blank">GitHub</a> |
+        <a class="bottom-item" href="https://hexo.io" target="_blank">Powered by hexo</a> |
+        <a class="bottom-item" href="https://github.com/KevinOfNeu/hexo-theme-xoxo" target="_blank">Theme xoxo</a>
     </div>
 </footer>
+  
 
-    </div>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
 <script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
+  (function(window, document, undefined) {
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+    var timer = null;
 
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
 
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
+    var hearts = [];
+    window.requestAnimationFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+    init();
 
+    function init() {
+      css(".heart{z-index:9999;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+      attachEvent();
+      gameloop();
+      addMenuEvent();
+    }
 
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
+    function gameloop() {
+      for (var i = 0; i < hearts.length; i++) {
+        if (hearts[i].alpha <= 0) {
+          document.body.removeChild(hearts[i].el);
+          hearts.splice(i, 1);
+          continue;
+        }
+        hearts[i].y--;
+        hearts[i].scale += 0.004;
+        hearts[i].alpha -= 0.013;
+        hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+      }
+      requestAnimationFrame(gameloop);
+    }
+
+    /**
+     * 给logo设置点击事件
+     * 
+     * - 回到顶部
+     * - 出现爱心
+     */
+    function attachEvent() {
+      var old = typeof window.onclick === "function" && window.onclick;
+      var logo = document.getElementById("logo");
+      if (logo) {
+        logo.onclick = function(event) {
+          returnTop();
+          old && old();
+          createHeart(event);
         }
       }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+      
+    }
 
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+    function createHeart(event) {
+      var d = document.createElement("div");
+      d.className = "heart";
+      hearts.push({
+        el: d,
+        x: event.clientX - 5,
+        y: event.clientY - 5,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+      });
+      document.body.appendChild(d);
+    }
+
+    function css(css) {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      try {
+        style.appendChild(document.createTextNode(css));
+      } catch (ex) {
+        style.styleSheet.cssText = css;
       }
-    </script>
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
 
-  </div>
+    function randomColor() {
+      // return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+      return "#F44336";
+    }
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        if (toc) {
+          menu.onclick = function() {
+            if (toc) {
+              if (toc.style.display == 'block') {
+                toc.style.display = 'none';
+              } else {
+                toc.style.display = 'block';
+              }
+            }
+          };
+        } else {
+          menu.style.display = 'none';
+        }
+      }
+    }
+
+  })(window, document);
+</script>
+
+  
+
+
+
 </body>
 </html>
