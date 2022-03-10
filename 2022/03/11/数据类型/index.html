@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据类型 | pgg的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C语言是有类型的语言** c语言的变量，必须： 在使用前定义，并且确定类型 C以后的语言向两个方向发展：C++&#x2F;Java，更加强调类型，对类型的检查更严格 像JavaScript、python、PHP不看重类型，甚至不需要事先定义，也不需要区分类型   类型安全 ■支持强类型的观点认为明确的类型有助于尽早发现程序中的简单错误 ■反对强类型的观点认为过于强调类型迫使程序员面对底层、实现而非事务逻辑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型">
+<meta property="og:url" content="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="pgg的博客">
+<meta property="og:description" content="C语言是有类型的语言** c语言的变量，必须： 在使用前定义，并且确定类型 C以后的语言向两个方向发展：C++&#x2F;Java，更加强调类型，对类型的检查更严格 像JavaScript、python、PHP不看重类型，甚至不需要事先定义，也不需要区分类型   类型安全 ■支持强类型的观点认为明确的类型有助于尽早发现程序中的简单错误 ■反对强类型的观点认为过于强调类型迫使程序员面对底层、实现而非事务逻辑">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/bf1b1b3148d21b40ef791df009cafbbd.png">
+<meta property="og:image" content="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/d7d7482e96587f1d09797fbbafea1a56.png">
+<meta property="og:image" content="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/3f14af8bd8dfe47e7ec485dcee795156.png">
+<meta property="article:published_time" content="2022-03-10T18:57:34.149Z">
+<meta property="article:modified_time" content="2022-03-10T18:58:13.768Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/bf1b1b3148d21b40ef791df009cafbbd.png">
+  
+    <link rel="alternate" href="/atom.xml" title="pgg的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">pgg的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2022-03-10T18:57:34.149Z" itemprop="datePublished">2022-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C语言是有类型的语言**</p>
+<p>c语言的变量，必须：</p>
+<p>在使用前定义，并且确定类型</p>
+<p>C以后的语言向两个方向发展：C++/Java，更加强调类型，对类型的检查更严格</p>
+<p>像JavaScript、python、PHP不看重类型，甚至不需要事先定义，也不需要区分类型</p>
+<br/>
+
+<p><strong>类型安全</strong></p>
+<p>■支持强类型的观点认为明确的类型有助于尽早发现程序中的简单错误</p>
+<p>■反对强类型的观点认为过于强调类型迫使程序员面对底层、实现而非事务逻辑</p>
+<p>■总的来说，早期语言强调类型，面向底层的语言强调类型</p>
+<p>■C语言需要类型，但是因为C语言出现较早，诞生的时候对类型的安全检查并不足够</p>
+<br/>
+
+<p><strong>C语言的类型</strong></p>
+<p>■整数  char、short、int、long、<u>long long</u></p>
+<p>■浮点数  float double <u>long double</u></p>
+<p>■逻辑 <u>bool</u>（人为定义的，可简单归为整数）</p>
+<p>■指针</p>
+<p>■自定义类型</p>
+<p>（以上标有下划线的是C99标准有的）</p>
+<br/>
+
+<p><strong>类型有何不同</strong></p>
+<p>■类型名称：int long double</p>
+<p>■输入输出时的格式化：%d %ld %f %lf</p>
+<p>■所表达的数的范围：char&lt;short&lt;int&lt;float&lt;double</p>
+<p>■内存中所占据的大小：1个字节到16个字节</p>
+<p>■内存中的表达形式：二进制数（补码）、编码  （int 是自然二进制 double是编码）</p>
+<br/>
+
+<p><strong>sizeof</strong></p>
+<p>■是一个运算符，给出某个类型或者变量在内存中所占据的字节数</p>
+<p>■sizeof（int）</p>
+<p>■sizeof（i）</p>
+<p>■是静态运算符，它的结果在编译时刻就决定了</p>
+<p>■不要再sizeof的括号里做运算，这些运算不会被执行，如当a是一个整数，sizeof（a+1.0）=8，因为a+1.0编程了一个浮点数，运算不会被执行，输出的结果在编译的时候就已经确定了</p>
+<p>#include &lt;stdio.h&gt;<br>int main(){<br>    int i;<br>    printf(“sizeof(int)=%ld\n”,sizeof(int));<br>    printf(“sizeof(i)=%ld\n”,sizeof(i)); </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;sizeof(double)=%ld\n&quot;,sizeof(double)); </span><br><span class="line">printf(&quot;sizeof(double)=%ld\n&quot;,sizeof(long double));</span><br></pre></td></tr></table></figure>
+
+<p>return 0;<br>}</p>
+<p>输出结果</p>
+<p>sizeof(int)=4<br>sizeof(i)=4</p>
+<p>sizeof(double)=8<br>sizeof(double)=16</p>
+<p>（1个字节（Byte）= 8个比特（bit））说明这是32位的变量（4*8）</p>
+<p>同理，double是64位的变量</p>
+<br/>
+
+<p>U表示该常数用无符号整型方式存储，相当于unsigned int;<br>L表示该常数用长整型方式存储，相当于long<br>F表示该常数用浮点方式存储，相当于float</p>
+<br/>
+
+<p>#include &lt;stdio.h&gt;<br>int main(){<br>    printf(“sizeof(char)=%ld\n”,sizeof(char));<br>    printf(“sizeof(short)=%ld\n”,sizeof(short));<br>    printf(“sizeof(int)=%ld\n”,sizeof(int));   //取决于编译器（CPU）通常的意义是1个字<br>    printf(“sizeof(long)=%ld\n”,sizeof(long));    //取决于编译器，通常的意义是1个字<br>    printf(“sizeof(long long)=%ld\n”,sizeof(long long));<br>return 0;<br>}</p>
+<p>输出结果：</p>
+<p>sizeof(char)=1<br>sizeof(short)=2<br>sizeof(int)=4<br>sizeof(long)=4<br>sizeof(long long)=8</p>
+<br/>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cpu  --&gt;RAM</span><br><span class="line"></span><br><span class="line">reg  总线</span><br></pre></td></tr></table></figure>
+
+<p>字长：从RAM到cpu中reg（寄存器）传输的我们常说的32bit/64bit就叫做一个字长，在c语言中int就是用来表达寄存器的</p>
+<br/>
+
+<p><strong>整数的内部表达</strong></p>
+<p>计算机内部一切都是二进制</p>
+<p>18-&gt;00010010</p>
+<p>0-&gt;00000000</p>
+<p>-18-&gt; ?</p>
+<br/>
+
+<p><strong>原码、反码、补码</strong></p>
+<p>原码：如果机器字长为n，那一个数的原码就是一个n位的二进制数，该数的首位数字若为0，则为正数；若为1，即为负数。</p>
+<p>反码：正数和负数的反码有所不同，正数的反码就是其本身。而负数，反码由除了首位决定数正负的位，其余位取反得到，即0-&gt;1,1-&gt;0</p>
+<p>补码：若该数为正数，其补码就是其本身，即有当数为正数时，原码=反码=补码。若该数为负数，其补码为在反码的基础上在最低位加1</p>
+<br/>
+
+<p>二进制负数</p>
+<p>■一个字节可以表达的数</p>
+<p>00000000-11111111（0-255）</p>
+<p>■三种方案：</p>
+<p>1.仿照十进制，有一个特殊的标志表示负数</p>
+<p>（比如我们在8个bit外加一个1表示负数的标志）</p>
+<p>2.取中间的数为0，如果10000000表示0，比它小的为负数，比它大的是正数</p>
+<p>（设置边界）</p>
+<p>3.<u>补码</u></p>
+<p>■考虑-1，我们希望-1+1-&gt;0.如何能做到</p>
+<p>0-&gt;00000000</p>
+<p>1-&gt;00000001</p>
+<p>思路1：我们让00000001为1，00000000为-1，二者相加</p>
+<p>11111111+00000001-&gt;100000000（如果这个数是8个bit，超过8位的1会被舍弃）</p>
+<p>思路2：因为0-1-&gt;-1,所以，-1=</p>
+<p>(1)00000000-00000001-&gt;11111111     (此时11111111就是-1)</p>
+<p>■11111111被当作纯二进制看待时，是255，被当作补码看待时是-1</p>
+<p>同理，对于-a，其补码就是0-a，实际上是2的n次方 -a，n是这种类型的位数</p>
+<p>补码的意义就是拿补码和原码可以加出一个溢出的“0”</p>
+<br/>
+
+<p><strong>整数的范围</strong></p>
+<p>对于一个字节（8位），可以表达的是：</p>
+<p>·对于一个字节(8位)，可以表达的是：<br>·00000000-11111111<br>·其中<br>·00000000-&gt;0<br>·11111111<del>10000000&gt;-1</del>-128<br>·00000001<del>01111111-&gt;1</del>127</p>
+<br/>
+
+<p>#include &lt;stdio.h&gt;<br>int main()</p>
+<p>{</p>
+<p>char c 255;<br>int i 255;<br>printf(“c=%d,i=%d\n”,c,i);<br>//11111111<br>//00000000 00000000 00000000 11111111<br>return 0;<br>}</p>
+<p>输出结果c=-1,i=255</p>
+<br/>
+
+<p>·char:1字节：-128<del>127<br>·short:2字节：-32768</del>32767<br>·int:取决于编译器(CPU),通常的意义是“1个字”<br>·long:4字节<br>·longlong:8字节</p>
+<br/>
+
+<p><strong>unsigned</strong><br>·如果一个字面量常数想要表达自己是unsigned,可以在后面加u或U<br>·255U<br>·用l或L表示long(long)<br>unsigned的初衷并非扩展数能表达的范围，而是为了做纯二进制运算，主要是为了移位</p>
+<br/>
+
+<p><strong>整数越界</strong><br>·整数是以纯二进制方式进行计算的，所以：<br>·11111111+1-&gt;100000000-&gt;0<br>·01111111+1&gt;10000000-&gt;-128<br>·10000000-1-&gt;01111111-&gt;127</p>
+<p><u>char:</u></p>
+<p><img src="bf1b1b3148d21b40ef791df009cafbbd.png" alt="uTools_1646245682610.png"></p>
+<p>unsigned char:<img src="d7d7482e96587f1d09797fbbafea1a56.png" alt="uTools_1646245981667.png"></p>
+<p><strong>整数的输入输出</strong></p>
+<p>■只有两种形式：int或long long</p>
+<p>■%d : int</p>
+<p>■%u : unsigned</p>
+<p>■%ld : long long</p>
+<p>■%lu : unsigned long long </p>
+<p>小于int 的，如char short都采用相同的方式来做输出，即%d</p>
+<p>比int大的，用%ld</p>
+<br/>
+
+<p>8进制和16进制</p>
+<p>■一个以0开始的数字字面量是8进制</p>
+<p>■一个以0x开始的数字字面量是16进制</p>
+<p>■%o用于8进制，%x用于16进制</p>
+<p>■8进制和16进制知识如何把数字表达为字符串，与内部如何表达数字无关</p>
+<p>■16进制很适合表达二进制数据，因为4位二进制正好是一个16进制位，2‘4=16</p>
+<p>■8进制的一位数字正好表达3位二进制</p>
+<p>■因为早期计算机的字长是12的倍数，而非8</p>
+<br/>
+
+<p><strong>选择整数类型</strong></p>
+<p>■为什么整数要那么多种？</p>
+<p>   ■为了准确表达内存，做底层程序的需要</p>
+<p>   ■没有特殊要求，就选择int</p>
+<p>   ■现在的CPU的字长普遍是32位或64位，一次内存读写就是一个int，一次计算也是一个int，选择更短的类型不会变快，甚至可能变慢</p>
+<p>   ■现代编译器一般会设计内存对齐，所以更短的类型实际在内存中有可能也占据一个int的大小（虽然sizeof告诉你更小）</p>
+<p>   ■unsigned与否知识输出的不同，内部计算是一样的</p>
+<br/>
+
+<br/>
+
+<p>类型       字长                      范围                                 有效数字       scanf   printf</p>
+<p>float       32        ±(1.20x10’-38~3.40x10‘38),                    7               %f       %f %e<br>                                 0,±inf（无穷）,nan（约等于）</p>
+<p>double   64      ±(2.2x10’-308~1.79x10‘308),                 15              %lf     %f  %e<br>                                 0,±inf（无穷）,nan(不存在)（约等于）</p>
+<p>（范围靠近0，但只是接近0）        %e会以科学计数法输出</p>
+<br/>
+
+<p><strong>科学计数法</strong></p>
+<p>-5.67E+16</p>
+<p>■可选的+或-符号（表示正负）</p>
+<p>■小数点也是可选的，可有可无</p>
+<p>■可以用e或E（指数）</p>
+<p>■符号可以是-或+也可以省略（表示+）</p>
+<p>■整个词不能有空格</p>
+<br/>
+
+<p><strong>输出精度</strong></p>
+<p>在%和f/lf之间加上.n可以指定输出小数点后几位，这样的输出是做四舍五入的</p>
+<p>如printf(“%d.3f\n”,0.0049)  输出的结果是0.005</p>
+<p>计算机表达的浮点数并不是一个准确的数</p>
+<br/>
+
+<p><strong>超过范围的浮点数</strong></p>
+<p>printf输出inf表示超过范围的浮点数  +-∞</p>
+<p>printf输出nan表示不存在的浮点数</p>
+<p>带小数点的字面量是double而非float</p>
+<p>float需要用f或F后缀来表明身份</p>
+<p>不能用浮点数来进行一些精确的计算，但是整数永远是精确的</p>
+<p>浮点数在计算时是由专用的硬件部件实现的</p>
+<p>计算double和float所用的方法和硬件是一样的</p>
+<br/>
+
+<p><strong>选择浮点类型</strong></p>
+<p>如果没有特殊需要，只是用double</p>
+<p>现代cpu能直接对double做硬件运算，性能不会比float差，在64位的机器上，数据存储的速度也不会比float</p>
+<p>（long double 128位）</p>
+<p>double不能用在switch-case的判断变量中</p>
+<br/>
+
+<br/>
+
+<p>char （character）是一中整数，也是一中特殊的类型：字符。这是因为：</p>
+<p>用单引号表示的字符字面量：‘a’，‘1’</p>
+<p>‘’也是一个字符</p>
+<p>printf和scanf里用%c来输入输出字符</p>
+<br/>
+
+<p>■如何输入‘1’这个给字符给char c？</p>
+<p>■scanf（”%c”,&amp;c）;    -&gt;1</p>
+<p>■scanf(“%d”,&amp;i); c=i;  -&gt;49</p>
+<p>■’1’的ASCII编码是49，所以当c==49时，它代表‘1’</p>
+<br/>
+
+<p>//‘1’的ascii编码是49，所以当c==49时–&gt;’1’<br>#include &lt;stdio.h&gt;</p>
+<p>int main (){<br>    int i;<br>    char c;<br>    i=c;<br>    scanf(“%d”,&amp;c);<br>    printf(“c=%d\n”,c);<br>    printf(“c=’%c’\n”,c);<br>    return 0;<br>}</p>
+<br/>
+
+<p><strong>字符计算</strong></p>
+<p>■一个字符一个数字得到的ASCII码表中那个数之后的字符</p>
+<p>■两个字符的减，得到它们在ASCII表中的距离</p>
+<p>#include &lt;stdio.h&gt;<br>int main(){<br>char c =’A’;<br>c++;<br>printf(“%c\n”,c);<br>char i=’Z’-‘A’;<br>printf(“%d\n”,i);<br>}</p>
+<p>输出结果</p>
+<p>B</p>
+<p>25</p>
+<p>·字母在ASC川表中是顺序排列的<br>·大写字母和小写字母是分开排列的，并不在一起<br>·‘a’-A’可以得到两段之间的距离，于是<br>·a+’a’-‘A”可以把一个大写字母变成小写字母，而a+’A‘-’a‘可以把一个小写字母变成大写字母</p>
+<br/>
+
+<p><strong>逃逸字符</strong></p>
+<p>用来表示无法印出来的控制字符或特殊字符，它由一个反斜杠”\“开头，后面跟上一个字符，这两个字符合起来，组成一个字符</p>
+<p>printf(“请分别输出身高的英尺和英寸,””如输入&quot;5 7&quot;表示5英尺7英寸”);</p>
+<p><img src="3f14af8bd8dfe47e7ec485dcee795156.png" alt="uTools_1646932994817.png"></p>
+<p>\b 回去一格 但不是删除</p>
+<p>\t 到下一个表格位  每行固定的位置 ，一个\t使得输出从下一个制表位开始，用\t才能使得上下两行对齐</p>
+<p>#include &lt;stdio.h&gt;<br>int main()<br>{<br>printf(“123\t456n”);<br>printf(“12\t456\n”);<br>return 0;</p>
+<p>输出结果：123 456</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12   456</span><br></pre></td></tr></table></figure>
+
+<p>\n  换行  \反斜杠本身</p>
+<p>\r   回车</p>
+<p>（\n \r 都是源于打字机 车）</p>
+<br/>
+
+<br/>
+
+<p>自动类型转换**</p>
+<p>■当运算符的两边出现不一致的类型时，会自动转换成较大的类型</p>
+<p>■大的意思时能表达的数的范围更大</p>
+<p>■char-&gt;short-&gt;int-&gt;long-&gt;long long </p>
+<p>■int-&gt;float-&gt;double</p>
+<p>■对于printf，任何小于int的类型会被转换成int；float会被转换成double</p>
+<p>■但是scanf不会，要输入short，需要%hd；要输入long，需要%ld，要输入char，没有办法，必须先输入一个整数再交给char的类型</p>
+<br/>
+
+<p><strong>强制转换类型</strong></p>
+<p>■要把一个量强制转换成另一个类型（通常时较小的类型）需要：</p>
+<p> ■（类型）值</p>
+<p>比如：int(10.2)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(short)32</span><br></pre></td></tr></table></figure>
+
+<p>■注意这时候的安全性，小的变量不总能表达大的量</p>
+<p>如:(short)32768输出的时-32767</p>
+<p>需要考虑类型的范围当超出了范围就得不到的想要输出的结果</p>
+<p>■强制类型转换只是从那个变量计算出了一个新的类型的值，它并不改变那个变量，无论是值还是类型都不改变</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main(){</p>
+<p>int i;</p>
+<p>i=32768;</p>
+<p>short s=(short)i;</p>
+<p>printf(“%d\n”,i);</p>
+<p>return 0;</p>
+<p>}</p>
+<p>强制类型转换的优先级是高于四则运算的</p>
+<p>double a=1.0;</p>
+<p>double b=2.0;</p>
+<p>int i=(int)a/b;</p>
+<br/>
+
+<br/>
+
+<p>bool**</p>
+<p>用头文件 #include &lt;stdbool.h&gt;之后就可以使用bool和true、false</p>
+<br/>
+
+<p><strong>逻辑运算</strong></p>
+<p>■逻辑运算是对逻辑量进行的运算，结果只有0或1</p>
+<p>■逻辑两是关系运算或逻辑运算的结果</p>
+<br/>
+
+<p>运算符   描述         示例                    结果</p>
+<p>！         逻辑非       !a     如果a是true结果就是false,如果a是false结果就是true</p>
+<p>&amp;&amp;        逻辑与       a&amp;&amp;b  如果a和b都是true,结果就是true;否则就是false</p>
+<p>||            逻辑或          a||b   如果a和b有一个是true,结果为true;两个都是false,结果为false</p>
+<br/>
+
+<p>如果想要表达数学中的区间，如x∈[4,6]需要写成x&gt;=4&amp;&amp;x&lt;=6</p>
+<br/>
+
+<p><u>优先级</u></p>
+<p>！&gt;&amp;&amp;&gt;||</p>
+<br/>
+
+<p><strong>短路</strong></p>
+<p>■逻辑运算是自左向右进行的，若左边的结果已经能够决定结果了，就不会做右边的计算</p>
+<p>对于&amp;&amp;，左边是false时就不做右边了</p>
+<p>对于||，左边时true时就不做右边了</p>
+<p>■当我们做逻辑运算时，不要把赋值，包括复合赋值组合进表达式</p>
+<br/>
+
+<p><strong>条件运算符</strong></p>
+<p>count =(count 20)?count-10 :count+I0;<br>条件、条件满足时的值和条件不满足时的值，问号后面是条件满足时的值，冒号后面时条件不满则时候的值</p>
+<p>这句相当于</p>
+<p>if (count&gt;20){<br>count=count-10;</p>
+<p>}</p>
+<p>else {</p>
+<p>count=count+10;</p>
+<p>}</p>
+<p>条件运算符的优先级高于赋值运算符，但是低于其他运算符</p>
+<p>我们不希望使用嵌套的条件表达式</p>
+<br/>
+
+<p><strong>逗号运算</strong></p>
+<p>  逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。逗号的优先级是所有的运算符中最低的，所以它两边的表达式会先计算；逗号的组合关系是自左向右的，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果。</p>
+<br/>
+
+<p>目前来说逗号表达式基本上只用在for循环语句中</p>
+<p>for(i=0,j=10;i&lt;j;i++,j–);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="cl0lcr2r20000ikc2hdk0g51i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/11/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">循环控制</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/11/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">循环控制</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/26/%E5%BE%AA%E7%8E%AF/">循环</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/26/%E5%88%A4%E6%96%AD/">判断</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/26/%E8%AE%A1%E7%AE%97/">计算</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
