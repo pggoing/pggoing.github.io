@@ -64,6 +64,181 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/15/%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2022-03-14T17:00:16.745Z" itemprop="datePublished">2022-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/15/%E5%87%BD%E6%95%B0/">函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是函数？</p>
+<p>■函数是一块代码，接受零个或多个参数，做一件事情，并返回零个或一个值</p>
+<p>■可以先想象成数学中的函数 y=f(x)</p>
+<br/>
+
+<p>/<em>先定义函数再拿来后来使用</em>/<br>#include &lt;stdio.h&gt;<br>void sum(){<br>    int begin,end,x;<br>    int sum=0;<br>    printf(“请输入区间范围\n格式为(begin,end)二者之间用空格隔开”);<br>    scanf(“%d %d”,&amp;begin,&amp;end);<br>    for(x=begin;x&lt;=end;x++){<br>        sum += x;<br>    }<br>    printf(“%d到%d的和为%d”,begin,end,sum);<br>}<br>int main01(){<br>    sum();<br>    return 0;<br>}</p>
+<br/>
+
+<p>#include &lt;stdio.h&gt;<br>void sum(int begin,int end)<br>{<br>    int sum=0;<br>    int i;<br>    for (i=begin;i&lt;=end;i++){<br>        sum+=i;<br>    }printf(“%d到%d的和为%d\n”,begin,end,sum);<br>}<br>int main(){<br>    sum(1,10);<br>    sum(20,30);<br>    sum(35,45);<br>}</p>
+<br/>
+
+<p><strong>函数定义</strong></p>
+<p>void sum(int begin,int end)     函数头   void是返回类型   sum是函数名</p>
+<p>(int begin,int end)叫做参数表</p>
+<p>{</p>
+<p>int i;</p>
+<p>int sum=0;</p>
+<p>for(i=begin;i&lt;=end;i++)</p>
+<p>sum+=i;</p>
+<p>}</p>
+<p>printf(“%d到%d的和是%d\n”，begin,end,sum)；</p>
+<p>函数体</p>
+<br/>
+
+<p><strong>调用函数</strong></p>
+<p>■函数名(参数值)</p>
+<p>■()起到了表示函数调用的重要作用</p>
+<p>■即使没有参数也需要()</p>
+<p>■如果有参数，则需要给出正确的数量和顺序</p>
+<p>■这些值会被按照顺序一次用来初始化函数中的参数</p>
+<p>■函数知道每一次是哪里调用它，会返回到正确的地方</p>
+<br/>
+
+<p><strong>从函数中返回值</strong></p>
+<p>■return停止函数的执行，并返回一个值</p>
+<p>■return;</p>
+<p>■return表达式</p>
+<p>■一个函数里可以出现多个return语句</p>
+<p>■可以赋值给变量</p>
+<p>■可以再传递给函数</p>
+<p>■甚至可以丢弃</p>
+<br/>
+
+<p><strong>没有返回值的函数</strong></p>
+<p>■void函数名（参数表）</p>
+<p>■不能使用带值得return</p>
+<p>■可以没有return</p>
+<p>■调用得时候不能做返回值的赋值</p>
+<p>如果函数有返回值，则必须使用带值的return，返回类型就不是void</p>
+<br/>
+
+<p>函数先后关系**</p>
+<p>像这样把sum()写在上面，是因为：<br>■C的编译器自上而下顺序分析你的代码<br>■在看到sum(1,10)的时候，它需要知道sum()的样子<br>■也就是sum()要几个参数，每个参数的类型如何，返回什么类型<br>■这样它才能检查你对sum()的调用是否正确</p>
+<p>如果不知道？</p>
+<p>警告或者报错</p>
+<br/>
+
+<p><strong>函数原型</strong><br>■函数头，以分号”;”结尾，就构成了函数的原型</p>
+<p>■函数原型的目的是告诉编译器这个函数长什么样</p>
+<p>■名称</p>
+<p>■参数（数量及类型）</p>
+<p>■返回类型</p>
+<p>■旧标准习惯把函数原型写在调用它的函数里面</p>
+<p>■现在一般写在调用它的函数前面</p>
+<p>■原型里可以不写参数的名字，但是一般仍然写上</p>
+<p>一般来说，出现在int main()之上的函数头为声明，实际的函数头会出现在下面，但凡是声明过的函数原型，出现在main（）中时会根据原型判断</p>
+<br/>
+
+<p><strong>参数传递</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">调用函数</span><br></pre></td></tr></table></figure>
+
+<p>■如果函数有参数，调用函数时必须传递给它数量、类型正确的值</p>
+<p>■可以传递给函数的值是表达式的结果，这包括：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字面量</span><br><span class="line"></span><br><span class="line">变量</span><br><span class="line"></span><br><span class="line">函数的返回值</span><br><span class="line"></span><br><span class="line">计算的结果</span><br></pre></td></tr></table></figure>
+
+<p>类型不匹配？</p>
+<p>■调用函数时给的值与参数的类型不匹配是C语言传统上最大的漏洞</p>
+<p>■编译器总是悄悄地替你把类型转换好，但是这很可能不是你所期望的</p>
+<p>■后续的语言，如C++/java在这方面很严格</p>
+<br/>
+
+<p>传过去的是什么？</p>
+<p>C语言在调用函数时，永远只能传值给函数</p>
+<br/>
+
+<p><strong>传值</strong></p>
+<p>■每个函数有自己的变量空间，参数也位于这个独立的空间中，和其他函数没有关系</p>
+<p>■过去，对于函数参数表中的参数，叫做“形式参数”，调用函数时给得知，叫做“实际参数”</p>
+<p>■由于容易让初学者误会实际参数就是实际在函数中进行计算的参数，误会调用给你函数的时候把变量而不是值传进去了，所以我们不建议继续用这种古老的方式来称呼他们</p>
+<p>■我们认为，它们是参数和值的关系</p>
+<br/>
+
+<p><strong>本地变量</strong></p>
+<p>■函数的每次运行，就产生一个独立的变量空间，在这个空间中的变量，是函数的这次运行所独有的，称作本地变量</p>
+<p>■定义在函数内部的变量就是本地变量</p>
+<p>■参数也是本地变量</p>
+<br/>
+
+<p><strong>变量的生存期和作用域</strong><br>■生存期：什么时候这个变量开始出现了，到什么时候它消亡了<br>■作用域：在（代码的)什么范围内可以访问这个变量(这个变量可以起作用)<br>■对于本地变量，这两个问题的答案是统一的：大括号内——块</p>
+<br/>
+
+<p>本地变量的规则</p>
+<p>■本地变量定义在块内的</p>
+<p>■它可以是定义在函数的块内</p>
+<p>■也可以定义在语句的块内</p>
+<p>■甚至可以随便拉一堆大括号来定义变量</p>
+<p>■程序运行进入这个块之前，其中的变量不存在，离开这个块，其中的变量就消失了</p>
+<p>■块外面定义的变量在里面仍然有效</p>
+<p>■块里面定义了和外面同名的变量则掩盖了外面的</p>
+<p>■不能再一个块内定义同名的变量</p>
+<p>■本地变量不会被默认初始化</p>
+<p>■参数在进入函数的时候被初始化了</p>
+<p>（块就是“大括号”）</p>
+<br/>
+
+<p><strong>函数庶事</strong></p>
+<p>没有参数时？</p>
+<p>到底是写成void f(void);还是void ();</p>
+<p>在传统C中，它表示f函数的参数表未知，并不表示没有参数</p>
+<br/>
+
+<p>逗号运算符？</p>
+<p>■调用函数时的逗号和逗号运算符怎么区分？</p>
+<p>■调用函数时的圆括号里的逗号是标点符号，而不是运算符</p>
+<p>■f(a,b)   f((a,b))</p>
+<br/>
+
+<p>函数里的函数？</p>
+<p>■C语言不允许函数的嵌套定义</p>
+<p>我们可以在一个函数里面放另外一个函数的声明，但是不能放另一个函数的body、定义</p>
+<br/>
+
+<p><strong>关于main</strong></p>
+<p>■int main()也是一个函数</p>
+<p>■要不要写成int main(void)?</p>
+<p>■return 的0有人看吗?</p>
+<p>■Windows: if error level 1…</p>
+<p>■Unix bash：echo ＄?</p>
+<p>■Csh: echo ＄status</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/15/%E5%87%BD%E6%95%B0/" data-id="cl0qycswf0001swc2gwzq961l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
@@ -402,7 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="cl0lcr2r20000ikc2hdk0g51i" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="cl0qycswo0007swc2gnzg5nbr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -451,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/11/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" data-id="cl0lcpiee00056cc2dt5026n9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/11/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" data-id="cl0qycswn0006swc25n1ihurw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -547,7 +722,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/26/%E5%BE%AA%E7%8E%AF/" data-id="cl0lcpie700036cc20ayuay42" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/26/%E5%BE%AA%E7%8E%AF/" data-id="cl0qycswm0005swc2awazahmm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +812,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/26/%E5%88%A4%E6%96%AD/" data-id="cl0lcpie800046cc23jpl800x" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/26/%E5%88%A4%E6%96%AD/" data-id="cl0qycswl0004swc2875b0rtv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -856,7 +1031,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/26/%E8%AE%A1%E7%AE%97/" data-id="cl0lcpieg00086cc29w9hdq1f" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/26/%E8%AE%A1%E7%AE%97/" data-id="cl0qycsx2000aswc294xtf9l8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -933,7 +1108,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/10/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80/" data-id="cl0lcpief00066cc2gnag26hv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/10/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80/" data-id="cl0qycswp0008swc23tkndpw3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -984,7 +1159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cl0lcpie600026cc2h9cfc7o5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/01/node%20js+hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cl0qycswj0003swc288h97lk9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1032,7 +1207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/26/%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%BD%95/" data-id="cl0lcpieg00076cc252wt31mw" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/26/%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%BD%95/" data-id="cl0qycsx10009swc2he29cm6d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1081,56 +1256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/16/pgg%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cl0lcpie400016cc2hodv2bis" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/16/hello-world/" class="article-date">
-  <time datetime="2021-11-16T12:04:48.747Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/16/hello-world/" data-id="cl0lcpidn00006cc22eelcdy3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/16/pgg%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cl0qycswi0002swc2gmmeevxu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1141,6 +1267,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -1171,6 +1302,10 @@
       <ul>
         
           <li>
+            <a href="/2022/03/15/%E5%87%BD%E6%95%B0/">函数</a>
+          </li>
+        
+          <li>
             <a href="/2022/03/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
           </li>
         
@@ -1184,10 +1319,6 @@
         
           <li>
             <a href="/2022/02/26/%E5%88%A4%E6%96%AD/">判断</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/26/%E8%AE%A1%E7%AE%97/">计算</a>
           </li>
         
       </ul>
